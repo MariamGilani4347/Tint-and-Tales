@@ -6,7 +6,7 @@ The website provides a responsive shopping interface with product categories, se
 
 ## Live Demo
 
-Add your deployed website link here if the project is hosted using GitHub Pages, Netlify, or another hosting platform.
+[View the live website](https://mariamgilani4347.github.io/Tint-and-Tales/) 
 
 ## Features
 
