@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makeup - Tint&Tales.pk</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<style>
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-close {
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <video class="background-video" autoplay muted loop>
+    <source src="7754396-hd_1920_1080_30fps.mp4" type="video/mp4">
+  </video>
+
+  <header><h1>Makeup</h1></header>
+  <main>
+    <section class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card" onclick="openModal('productModal1')">
+        <img src="product_image_1.jpg" alt="MUA Matte Lipstick">
+        <h3>MUA Matte Lipstick – Bona Fide</h3>
+        <p>₨ 1,115</p>
+        <button class="add-to-cart-btn" data-product-id="1">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="1">❤ Wishlist</button>
+      </div>
+      
+      <!-- Modal for Product 1 -->
+      <div id="productModal1" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>MUA Matte Lipstick – Bona Fide</h3>
+            <button class="modal-close" onclick="closeModal('productModal1')"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <img src="product_image_1.jpg" alt="MUA Matte Lipstick">
+            <p><strong>Price:</strong> ₨ 1,115</p>
+            <p><strong>Description:</strong> MUA's Matte Lipstick provides a velvety finish with long-lasting coverage. Perfect for any occasion.</p>
+            <button class="add-to-cart-btn" data-product-id="1">Add to Cart</button>
+            <button class="wishlist-btn" data-product-id="1">❤ Wishlist</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card" onclick="openModal('productModal2')">
+        <img src="product_image_2.jpg" alt="MUA Pressed Powder">
+        <h3>MUA Pressed Powder – Translucent</h3>
+        <p>₨ 1,000</p>
+        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="2">❤ Wishlist</button>
+      </div>
+      
+      <!-- Modal for Product 2 -->
+      <div id="productModal2" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>MUA Pressed Powder – Translucent</h3>
+            <button class="modal-close" onclick="closeModal('productModal2')"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <img src="product_image_2.jpg" alt="MUA Pressed Powder">
+            <p><strong>Price:</strong> ₨ 1,000</p>
+            <p><strong>Description:</strong> This pressed powder gives a smooth matte finish that controls shine throughout the day.</p>
+            <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+            <button class="wishlist-btn" data-product-id="2">❤ Wishlist</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add other products with modals as needed -->
+
+    </section>
+  </main>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+  </script>
+</body>
+</html>

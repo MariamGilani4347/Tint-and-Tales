@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Makeup – Tint&Tales.pk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    /* --- MODAL STYLES --- */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;                       /* top:0; right:0; bottom:0; left:0 */
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(3px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal.show {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    .modal-header {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #764ba2;
+      color: #fff;
+      border-radius: 12px 12px 0 0;
+    }
+    .modal-header h3 { margin: 0; }
+    .modal-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .modal-body {
+      padding: 1rem;
+    }
+    .modal-body img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .modal-body h2 {
+      margin: 0 0 .5rem;
+      font-size: 1.4rem;
+      color: #333;
+    }
+    .modal-body .price {
+      font-size: 1.2rem;
+      color: #e74c3c;
+      margin-bottom: 1rem;
+    }
+    .modal-body p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .modal-body ul {
+      margin: 0 0 1rem 1.2rem;
+      color: #555;
+    }
+    .modal-actions {
+      display: flex;
+      gap: .5rem;
+    }
+    .modal-actions button {
+      flex: 1;
+      padding: .75rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .add-btn { background: #27ae60; color: #fff; }
+    .wish-btn { background: #f8f9fa; color: #e74c3c; border: 2px solid #e74c3c; }
+    /* --- END MODAL STYLES --- */
+
+    /* re‑use your existing .product-grid/.product-card, etc. from style.css */
+  </style>
+</head>
+<body>
+
+  <header><h1>Makeup</h1></header>
+
+  <main>
+    <section class="product-grid">
+      <!-- Each card needs a data-product-id -->
+      <div class="product-card" data-product-id="1">
+        <img src="product_image_1.jpg" alt="MUA Matte Lipstick">
+        <h3>MUA Matte Lipstick – Bona Fide</h3>
+        <p class="price">₨ 1,115</p>
+        <div class="product-actions">
+          <button class="add-to-cart-btn">Add to Cart</button>
+          <button class="wishlist-btn">❤️ Wishlist</button>
+        </div>
+      </div>
+
+      <!-- … repeat for all other products, incrementing data-product-id … -->
+    </section>
+  </main>
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Product Name</h3>
+        <button class="modal-close" data-modal="productModal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="">
+        <h2 id="modalName"></h2>
+        <div class="price" id="modalPrice"></div>
+        <p id="modalDescription"></p>
+        <ul id="modalFeatures"></ul>
+        <div class="modal-actions">
+          <button class="add-btn" id="modalAddToCart">Add to Cart</button>
+          <button class="wish-btn" id="modalAddToWishlist">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART & WISHLIST MODALS (as before) -->
+  <div class="modal" id="cartModal">…</div>
+  <div class="modal" id="wishlistModal">…</div>
+
+  <script>
+  // --- PRODUCT DATA ---
+  const products = {
+    1: {
+      name: "MUA Matte Lipstick – Bona Fide",
+      price: "₨ 1,115",
+      image: "product_image_1.jpg",
+      description: "Rich matte color that lasts all day.",
+      features: ["Ultra‑pigmented","Long‑wear","Vegan"]
+    },
+    // … fill out for each data-product-id …
+  };
+
+  // --- HELPERS TO OPEN/CLOSE ANY MODAL ---
+  function openModal(id){ document.getElementById(id).classList.add('show') }
+  function closeModal(id){ document.getElementById(id).classList.remove('show') }
+  document.querySelectorAll('.modal-close').forEach(btn=>{
+    btn.addEventListener('click',()=>closeModal(btn.dataset.modal));
+  });
+  window.addEventListener('click', e=>{
+    if(e.target.classList.contains('modal')) closeModal(e.target.id);
+  });
+
+  // --- OPEN PRODUCT DETAILS ---
+  document.querySelectorAll('.product-card').forEach(card=>{
+    card.addEventListener('click', e=>{
+      // if they clicked one of the small buttons, let those handlers run instead:
+      if(e.target.closest('.product-actions')) return;
+
+      const id = card.dataset.productId;
+      const p  = products[id];
+      if(!p) return;
+
+      // populate
+      document.getElementById('modalTitle').innerText       = p.name;
+      document.getElementById('modalImage').src             = p.image;
+      document.getElementById('modalImage').alt             = p.name;
+      document.getElementById('modalName').innerText        = p.name;
+      document.getElementById('modalPrice').innerText       = p.price;
+      document.getElementById('modalDescription').innerText = p.description;
+
+      const ul = document.getElementById('modalFeatures');
+      ul.innerHTML = '';
+      p.features.forEach(f=>{
+        const li = document.createElement('li');
+        li.innerText = f;
+        ul.appendChild(li);
+      });
+
+      // wire up inner buttons
+      document.getElementById('modalAddToCart').onclick       = ()=> addToCart(id);
+      document.getElementById('modalAddToWishlist').onclick  = ()=> addToWishlist(id);
+
+      openModal('productModal');
+    });
+  });
+
+  // --- CART & WISHLIST LOGIC (boilerplate) ---
+  let cart = [], wishlist = [];
+  function addToCart(id){
+    cart.push(id);
+    updateBadge('cartBadge', cart.length);
+    // …update cart modal contents…
+  }
+  function addToWishlist(id){
+    if(!wishlist.includes(id)) wishlist.push(id);
+    updateBadge('wishlistBadge', wishlist.length);
+    // …update wishlist modal…
+  }
+  function updateBadge(elem, n){
+    const b = document.getElementById(elem);
+    if(b) b.innerText = n;
+  }
+
+  // nav icons open their modals
+  document.getElementById('cartNav')?.addEventListener('click', ()=>openModal('cartModal'));
+  document.getElementById('wishlistNav')?.addEventListener('click', ()=>openModal('wishlistModal'));
+  </script>
+</body>
+</html>

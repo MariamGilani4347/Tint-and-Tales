@@ -1,0 +1,149 @@
+<!-- beautytools.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Tools- Tint&Tales.pk</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<style>
+  .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+</style>
+<body>
+  <video class="background-video" autoplay muted loop>
+  <source src="4620916-uhd_4096_2160_25fps.mp4" type="video/mp4">
+</video>
+  <header><h1>Beauty Tools</h1></header>
+  <main>
+    <section class="product-grid">
+
+      <div class="product-card">
+        <img src="premium-10-piece-makeup-brushes-set-professional-quality-lotshoppk-195343.jpg" alt="Makeup Brush Set">
+        <h3>Pro Makeup Brush Set (10 pcs)</h3>
+        <p>₨ 2,200</p>
+        <button class="add-to-cart-btn" data-product-id="13">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="13">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="beautytoolsimages/633aaf388a302d1edf2459bd-nano-ionic-facial-steamer-professional.jpg" alt="Facial Steamer">
+        <h3>Facial Steamer</h3>
+        <p>₨ 4,300</p>
+        <button class="add-to-cart-btn" data-product-id="14">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="14">❤️ Wishlist</button>
+      </div>
+      <!-- New Product 2: Beauty Blenders Set -->
+      <div class="product-card">
+        <img src="Beauty Blender.webp" alt="Beauty Blenders">
+        <h3>Beauty Blender & Puff Set (12 pcs)</h3>
+        <p>₨ 799</p>
+        <button class="add-to-cart-btn" data-product-id="15">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="15">❤️ Wishlist</button>
+      </div>
+
+      <!-- New Product 3: Brush Cleaner Pad -->
+      <div class="product-card">
+        <img src="brush cleaner pad.jpg" alt="Brush Cleaner Pad">
+        <h3>Silicone Makeup Brush Cleaning Pad</h3>
+        <p>₨ 350</p>
+        <button class="add-to-cart-btn" data-product-id="16">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="16">❤️ Wishlist</button>
+      </div>
+
+      <!-- New Product 4: Derma Roller -->
+      <div class="product-card">
+        <img src="dermarollerinpakistan.webp" alt="Derma Roller">
+        <h3>540 Needle Derma Roller</h3>
+        <p>₨ 899</p>
+        <button class="add-to-cart-btn" data-product-id="17">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="17">❤️ Wishlist</button>
+      </div>
+
+      <!-- New Product 5: Facial Cleansing Brush -->
+      <div class="product-card">
+        <img src="facial cleansing brush.webp" alt="Facial Cleansing Brush">
+        <h3>2-in-1 Facial Cleansing Brush</h3>
+        <p>₨ 650</p>
+        <button class="add-to-cart-btn" data-product-id="18">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="18">❤️ Wishlist</button>
+      </div>
+
+      <!-- New Product 6: Jade & Rose Quartz Rollers -->
+      <div class="product-card">
+        <img src="GettyImages-1253197555.webp" alt="Face Rollers and Gua Sha Set">
+        <h3>Gua Sha & Face Roller Set</h3>
+        <p>₨ 1,099</p>
+        <button class="add-to-cart-btn" data-product-id="19">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="19">❤️ Wishlist</button>
+      </div>
+ <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active" id="homeNav">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+
+      <div class="nav-item" id="wishlistNav">
+        <i class="fas fa-heart"></i>
+        <span>Wishlist</span>
+        <span id="wishlistBadge" class="badge">0</span>
+      </div>
+
+      <div class="nav-item" id="cartNav">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+        <span class="badge" id="cartBadge">0</span>
+      </div>
+
+      <a href="login.html" class="nav-item" id="accountNav">
+        <i class="fas fa-user"></i>
+        <span>My Account</span>
+      </a>
+    </nav>
+
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Shopping Cart</h3>
+          <button class="modal-close" data-modal="cartModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-content">
+          <div id="cartItems"></div>
+          <div class="cart-total">
+            <h4>Total: ₨ <span id="cartTotal">0</span></h4>
+          </div>
+          <div class="cart-actions">
+            <button class="btn-primary" id="checkoutBtn">Checkout</button>
+            <button class="btn-secondary" id="clearCartBtn">Clear Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="wishlistModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>My Wishlist</h3>
+          <button class="modal-close" onclick="closeModal('wishlistModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="wishlist-content">
+          <div id="wishlistItems" class="cart-items"></div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+  </main>
+</body>
+</html>

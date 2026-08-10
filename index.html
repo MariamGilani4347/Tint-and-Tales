@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online Makeup, cosmetic, Skincare & Beauty Products – Tint&Tales.pk</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+  .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.top-banner {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+.header-center {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.site-logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ff6f61;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+</style>
+
+   
+<body>
+    <video class="background-video" autoplay muted loop>
+  <source src="1776306-uhd_1408_1920_25fps.mp4" type="video/mp4">
+</video>
+    <!-- Header -->
+     <div class="top-banner blinking">
+  SALE!!! Avail Offer Today!
+</div>
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.tiktok.com/" target="_blank" class="social-link"><i class="fab fa-tiktok"></i> Tiktok</a>
+                </div>
+                <div class="top-right">
+                    <a href="login.html" class="login-link" id="loginRegisterBtn"><i class="fas fa-user"></i> <span id="userStatus">Login / Register</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-left">
+                    <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i> Menu</button>
+                </div>
+                
+                <div class="header-center">
+                 <a href="index.html" class="logo">
+                 <img src="T & T (1).png" style="width: 250px; height: auto;" alt="Tint&Tales.pk" class="site-logo">
+                 </a>
+                   </div>
+
+                
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search for products" class="search-input" id="searchInput">
+                        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h3>Menu</h3>
+                <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="menu-nav">
+                <ul>
+                    
+                    <li><a href="makeup.html" data-category="makeup">Makeup</a></li>
+                    <li><a href="skincare.html" data-category="skincare">Skincare</a></li>
+                    <li><a href="fragrances.html" data-category="fragrances">Fragrances</a></li>
+                    <li><a href="haircare.html" data-category="haircare">Hair Care</a></li>
+                    <li><a href="beautytools.html" data-category="tools">Beauty Tools</a></li>
+                    <li><a href="bathnbody.html" data-category="bath">Bath & Body</a></li>
+                </ul>
+               
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slide active">
+            <div class="hero-content">
+                <h1>Slay Every Look</h1>
+                <p>Find your perfect match — from lips to lashes</p>
+                <button class="cta-btn">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="product_image_1.jpg" alt="Beauty Products">
+            </div>
+        </div>
+        
+        <div class="hero-slide">
+            <div class="hero-content">
+                <h1>Makeup Revolution – Beauty Without Limits</h1>
+                <p>from flawless foundations to bold palettes</p>
+                <button class="cta-btn">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="product_image_2.jpg" alt="Makeup Products">
+            </div>
+        </div>
+        
+        <div class="hero-slide">
+            <div class="hero-content">
+                <h1>Kiss-Ready Shades</h1>
+                <p>Perfect lips for every occasion</p>
+                <button class="cta-btn">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="product_image_3.jpg" alt="Lip Products">
+            </div>
+        </div>
+        
+        <div class="hero-controls">
+            <button class="hero-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="hero-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <div class="hero-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Brand Banners -->
+<section class="brand-banners">
+    <div class="container">
+        <div class="brand-grid">
+            <div class="brand-item" style="background-image: url('makeupimages/51795522_2258669861063559_7660750771499040768_n_aa85d74b-9cf8-416d-bbde-fbdd8136d64c.webp'); background-size: cover; background-position: center;">
+    <a href="makeup.html">
+        <h3>Make Up</h3>
+    </a>
+</div>
+            <div class="brand-item" style="background-image: url('skincareimages/7thSunscreenFront.webp'); background-size: cover; background-position: center;">
+    <a href="skincare.html">
+        <h3>Skin Care</h3>
+    </a>
+</div>
+
+            <div class="brand-item" style="background-image: url('haircareimages/coconut-hair-oil.jpg'); background-size: cover; background-position: center;">
+                <a href="haircare.html">
+                    <h3>Hair Care</h3>
+                </a>
+            </div>
+            <div class="brand-item" style="background-image: url('fragrancesimages/Opio-Kisses-Body-Mist-250ml-2.jpg'); background-size: cover; background-position: center;">
+                <a href="fragrances.html">
+                    <h3>Fragnances</h3>
+                </a>
+            </div>
+            <div class="brand-item" style="background-image: url('beautytoolsimages/premium-10-piece-makeup-brushes-set-professional-quality-lotshoppk-195343.jpg'); background-size: cover; background-position: center;">
+                <a href="beautytools.html">
+                    <h3>Beauty Tools</h3>
+                </a>
+            </div>
+              <div class="brand-item" style="background-image: url('LavendarRosemaryBathOil-1.webp'); background-size: cover; background-position: center;">
+                <a href="bathnbody.html">
+                    <h3>Bath & Body</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Product Sections -->
+    <main class="main-content">
+        <div class="container">
+            <!-- The Best Offers -->
+            <section class="product-section">
+                <h2>The Best Offers</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-product-id="1" data-category="skincare" data-brand="vcare">
+                        <div class="product-image">
+                            <img src="makeupimages/LIQUID-MATTE-PACKSHOT-MISS-AMERICA.jpg" alt="lipstick">
+                        </div>
+                        <div class="product-info">
+                            <h3>MUA Matte Lipstick Bona Fide</h3>
+                            <p class="stock-status">In stock</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" data-product-id="1">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-id="2" data-category="skincare" data-brand="vcare">
+                        <div class="product-image">
+                            <img src="product_image_2.jpg" alt="Vcare Natural Radiance Pack">
+                        </div>
+                        <div class="product-info">
+                            <h3>MUA Pressed Powder Translucent</h3>
+                            <p class="stock-status">In stock</p>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+    <!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div >
+
+</div>
+<a href="index.html" class="nav-item active" id="homeNav">
+<i class="fas fa-home"></i>
+<span>Home</span></a>
+
+    <div class="nav-item" id="wishlistNav">
+<i class="fas fa-heart"></i>
+<span>Wishlist</span>
+<span id="wishlistBadge" class="badge">0</span>
+</div>
+
+<div class="nav-item" id="cartNav">
+<i class="fas fa-shopping-cart"></i>
+<span>Cart</span>
+<span class="badge" id="cartBadge">0</span>
+</div>
+<a href="login.html" class="nav-item" id="accountNav">
+<i class="fas fa-user"></i>
+<span>My account</span></a>
+
+</nav>
+
+    <!-- Login Modal -->
+    <!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Login</h3>
+            <button class="modal-close" data-modal="loginModal"><i class="fas fa-times"></i></button>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            <p class="form-footer">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </form>
+
+        <!-- Divider -->
+        <div style="text-align: center; margin: 15px 0;">OR</div>
+
+        <!-- Google Login Button -->
+        <div style="text-align: center;">
+            <div id="g_id_onload"
+                data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                data-callback="handleGoogleLogin"
+                data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <button class="modal-close" data-modal="registerModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Phone:</label>
+                    <input type="tel" id="registerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerAddress">Address:</label>
+                    <textarea id="registerAddress" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password:</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+
+<!-- Google Sign-In Button -->
+<div style="margin-top: 20px; text-align: center;">
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-callback="handleGoogleLogin"
+         data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+</div>
+
+            </form>
+        </div>
+    </div>
+
+   
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="modal-close" data-modal="cartModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-content">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <h4>Total: ₨ <span id="cartTotal">0</span></h4>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-primary" id="checkoutBtn">Checkout</button>
+                    <button class="btn-secondary" id="clearCartBtn">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Wishlist Modal -->
+<div class="modal" id="wishlistModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>My Wishlist</h3>
+      <button class="modal-close" onclick="closeModal('wishlistModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="wishlist-content">
+      <div id="wishlistItems" class="cart-items"></div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- My Account Modal -->
+    <div class="modal" id="accountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>My Account</h3>
+                <button class="modal-close" data-modal="accountModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="account-content">
+                <div id="accountInfo"></div>
+                <div class="account-actions">
+                    <button class="btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Modal -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Search Results</h3>
+                <button class="modal-close" data-modal="searchModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-content">
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

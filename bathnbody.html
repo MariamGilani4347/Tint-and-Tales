@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bath & Body - Tint&Tales.pk</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<style>
+  .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+</style>
+<body>
+  <video class="background-video" autoplay muted loop>
+  <source src="3762910-uhd_3840_2160_25fps.mp4" type="video/mp4">
+
+</video>
+  <header><h1>Bath & Body</h1></header>
+  <main>
+    <section class="product-grid">
+
+      <div class="product-card">
+        <img src="bath and body/Veet-Hair-Remover-Wax-Strips-12pc-PCS.jpg" alt="Veet wax strips">
+        <h3>Veet 12 pcs Wax Strips</h3>
+        <p>₨ 750</p>
+        <button class="add-to-cart-btn" data-product-id="50">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="50">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bath and body/NIVEA-Cocoa-Butter-Body-Lotion-with-Deep-Nourishing-Serum-20-Fl-Oz_f02929ad-f23c-4ea6-969c-2906d91c078f.9c3842e9a76bf9878c9235cd00cec6b1.webp" alt="Body Lotion">
+        <h3>Hydrating Body Lotion</h3>
+        <p>₨ 2,800</p>
+        <button class="add-to-cart-btn" data-product-id="51">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="51">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bath and body/CopyofDSC02981edit1080_600x600_crop_center.webp" alt="Shower Gel">
+        <h3>Refreshing Shower Gel</h3>
+        <p>₨ 1,200</p>
+        <button class="add-to-cart-btn" data-product-id="53">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="53">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bath and body/Tree-Hut-Watermelon-Shea-Sugar-Exfoliating-and-Hydrating-Body-Scrub-18-oz_6ad862cf-16f3-4d44-becc-f3a96af4d1c1.56bc9ff9da3f4177cd911e839aeac404.webp" alt="Body Scrub">
+        <h3>Exfoliating Body Scrub</h3>
+        <p>₨ 3,000</p>
+        <button class="add-to-cart-btn" data-product-id="54">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="54">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bath and body/vaseline-lip-therapy-lip-balm-tin-rosy-lips-20g.webp" alt="Lip Balm">
+        <h3>Vaseline Rosy Lip Balm</h3>
+        <p>₨ 550</p>
+        <button class="add-to-cart-btn" data-product-id="55">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="55">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bath and body/bathing-round-loofah-for-men-and-women-pack-of-1-multicolor-1-original-imaggcxvykwxwm4r.webp" alt="Loofah">
+        <h3>Purple Loofah</h3>
+        <p>₨ 350</p>
+        <button class="add-to-cart-btn" data-product-id="56">Add to Cart</button>
+        <button class="wishlist-btn" data-product-id="56">❤️ Wishlist</button>
+      </div>
+
+    </section>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active" id="homeNav">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+
+      <div class="nav-item" id="wishlistNav">
+        <i class="fas fa-heart"></i>
+        <span>Wishlist</span>
+        <span id="wishlistBadge" class="badge">0</span>
+      </div>
+
+      <div class="nav-item" id="cartNav">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+        <span class="badge" id="cartBadge">0</span>
+      </div>
+
+      <a href="login.html" class="nav-item" id="accountNav">
+        <i class="fas fa-user"></i>
+        <span>My Account</span>
+      </a>
+    </nav>
+
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Shopping Cart</h3>
+          <button class="modal-close" data-modal="cartModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-content">
+          <div id="cartItems"></div>
+          <div class="cart-total">
+            <h4>Total: ₨ <span id="cartTotal">0</span></h4>
+          </div>
+          <div class="cart-actions">
+            <button class="btn-primary" id="checkoutBtn">Checkout</button>
+            <button class="btn-secondary" id="clearCartBtn">Clear Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="wishlistModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>My Wishlist</h3>
+          <button class="modal-close" onclick="closeModal('wishlistModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="wishlist-content">
+          <div id="wishlistItems" class="cart-items"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

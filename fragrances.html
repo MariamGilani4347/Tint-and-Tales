@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+ 
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragnances - Tint&Tales.pk</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<style>
+  .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+</style>
+
+  
+<body>
+    <video class="background-video" autoplay muted loop>
+  <source src="10537262-uhd_4096_2160_25fps.mp4" type="video/mp4">
+</video>
+    <header><h1>Fragrances</h1></header>
+    <main>
+  <section class="product-grid">
+            <!-- New Product 1: For Her Candle -->
+            <div class="product-card">
+                <img src="71umCKnKw3L.jpg" alt="Scented Candle For Her">
+                <h3>Scented Candle – For Her</h3>
+                <p>₨ 1,099</p>
+                <button class="add-to-cart-btn" data-product-id="31">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="31">❤️ Wishlist</button>
+            </div>
+
+            <!-- New Product 2: Febreze Air Mists -->
+            <div class="product-card">
+                <img src="91TG6EEdItL._SL1500_.jpg" alt="Febreze Air Mists">
+                <h3>Febreze Air Mist Pack (5 scents)</h3>
+                <p>₨ 2,499</p>
+                <button class="add-to-cart-btn" data-product-id="32">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="32">❤️ Wishlist</button>
+            </div>
+
+            <!-- New Product 3: Dusk Lavender Wax Melts -->
+            <div class="product-card">
+                <img src="02285FCC-CFFC-4490-BD9B-7F91E91B2537.jpg" alt="Lavender Wax Melts">
+                <h3>Dusk Bulgarian Lavender Wax Melts</h3>
+                <p>₨ 749</p>
+                <button class="add-to-cart-btn" data-product-id="33">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="33">❤️ Wishlist</button>
+            </div>
+
+            <!-- New Product 4: Opio Kisses Body Mist -->
+            <div class="product-card">
+                <img src="Opio-Kisses-Body-Mist-250ml-2.jpg" alt="Opio Body Mist">
+                <h3>Opio Kisses Body Mist – 250ml</h3>
+                <p>₨ 1,199</p>
+                <button class="add-to-cart-btn" data-product-id="34">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="34">❤️ Wishlist</button>
+            </div>
+            <div class="product-card">
+                <img src="fragrancesimages/lavender.jpg" alt="candle">
+                <h3>Lavender Scented Candle</h3>
+                <p>₨ 3,500</p>
+                <button class="add-to-cart-btn" data-product-id="35">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="35">❤️ Wishlist</button>
+            </div>
+
+            <div class="product-card">
+                <img src="skincareimages\miniso-perfume.jpg" alt="Perfume">
+                <h3>Miniso Fragrance</h3>
+                <p>₨ 2,900</p>
+                <button class="add-to-cart-btn" data-product-id="36">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="36">❤️ Wishlist</button>
+            </div>
+
+            <div class="product-card">
+                <img src="fragrancesimages\white sun moon candle.jpg" alt="Candle">
+                <h3>White Sun Moon Candle</h3>
+                <p>₨ 2,830</p>
+                <button class="add-to-cart-btn" data-product-id="37">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="37">❤️ Wishlist</button>
+            </div>
+             <div class="product-card">
+                <img src="fragrancesimages\perfume-for-her.jpg" alt="Perfume-For-Her">
+                <h3>Perfume-For-Her</h3>
+                <p>₨ 5,400</p>
+                <button class="add-to-cart-btn" data-product-id="38">Add to Cart</button>
+                <button class="wishlist-btn" data-product-id="38">❤️ Wishlist</button>
+            </div>
+
+        </section>
+        <nav class="bottom-nav">
+<div >
+
+</div>
+<a href="index.html" class="nav-item active" id="homeNav">
+<i class="fas fa-home"></i>
+<span>Home</span></a>
+
+    <div class="nav-item" id="wishlistNav">
+<i class="fas fa-heart"></i>
+<span>Wishlist</span>
+<span id="wishlistBadge" class="badge">0</span>
+</div>
+
+<div class="nav-item" id="cartNav">
+<i class="fas fa-shopping-cart"></i>
+<span>Cart</span>
+<span class="badge" id="cartBadge">0</span>
+</div>
+<a href="login.html" class="nav-item" id="accountNav">
+<i class="fas fa-user"></i>
+<span>My account</span></a>
+</nav>
+  </main>
+  <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="modal-close" data-modal="cartModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-content">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <h4>Total: ₨ <span id="cartTotal">0</span></h4>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-primary" id="checkoutBtn">Checkout</button>
+                    <button class="btn-secondary" id="clearCartBtn">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Wishlist Modal -->
+<div class="modal" id="wishlistModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>My Wishlist</h3>
+      <button class="modal-close" onclick="closeModal('wishlistModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="wishlist-content">
+      <div id="wishlistItems" class="cart-items"></div>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+</body>
+</html>
